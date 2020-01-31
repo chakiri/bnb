@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% if editMode %}Edition d'annonce{% else %}Creation d'annonce{% endif %}{% endblock %}
+
+{% form_theme form 'ad/_collection.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>{% if editMode %}Edition annonce{% else %}Création annonce{% endif %}</h1>
+        {{ form_start(form) }}
+
+        <div class="form-group">
+            {{ form_widget(form) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="/js/collectionImage.js"></script>
+{% endblock %}
